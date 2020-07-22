@@ -4,6 +4,8 @@ class_name BasePlayer
 
 # const BasePlayerNode = preload("res://src/players/base_player.tscn")
 
+signal life;
+
 var player_name : String
 
 var health : int
@@ -11,20 +13,22 @@ var mana : int
 
 var strength : int
 
-var equipped_weapon : Weapon
-var equipped_armor : Armor
+var equipped_weapon
+var equipped_armor
 
 var known_skills : Array
 
+func _to_string():
+	return player_name + ", HP: " + str(health) + ", MP: " + str(mana)
+
 func death():
-	# TODO: To implement (is it really virtual?)
-	pass
+	emit_signal("life")
 
 func check_if_alive() -> void:
 	if health <= 0:
 		death()
 
-func base_attack(target : BasePlayer) -> Attack:
+func base_attack() -> Attack:
 	# Return an Attack based on the player's equipped weapon
 	# and base stats
 	var damage : Damage = Damage.new()

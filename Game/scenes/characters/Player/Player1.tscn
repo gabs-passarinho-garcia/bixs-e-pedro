@@ -121,10 +121,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [  ]
+"values": [ ExtResource( 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:visible")
@@ -194,16 +194,16 @@ tracks/2/keys = {
 script = ExtResource( 2 )
 
 [node name="luta" type="Sprite" parent="."]
+visible = false
 show_behind_parent = true
 position = Vector2( -45.4085, -47.0902 )
 scale = Vector2( 0.625801, 0.764549 )
-texture = ExtResource( 18 )
+texture = ExtResource( 17 )
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
 position = Vector2( 3.77545, -4.83943 )
 scale = Vector2( 0.584695, 0.62511 )
-texture = ExtResource( 3 )
+texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

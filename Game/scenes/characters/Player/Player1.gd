@@ -44,7 +44,15 @@ func _process(delta):
 		linear_velocity.y = TERMINALVELOCITY
 	if Input.is_action_pressed("ui_left"):
 		linear_velocity.x -= WALKSPEED
+		$Sprite.flip_h = true
 	if Input.is_action_pressed("ui_right"):
 		linear_velocity.x += WALKSPEED
+		$Sprite.flip_h = false
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().quit()
 	move_and_slide(linear_velocity,floor_normal)
+	if linear_velocity.x == 0:
+		$AnimationPlayer.play("Parado")
+	elif $AnimationPlayer.current_animation != "Andando":
+		$AnimationPlayer.play("Andando")
 	pass

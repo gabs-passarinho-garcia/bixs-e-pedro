@@ -65,6 +65,9 @@ __meta__ = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
+rotating = true
+current = true
+smoothing_enabled = true
 __meta__ = {
 "_edit_lock_": true
 }

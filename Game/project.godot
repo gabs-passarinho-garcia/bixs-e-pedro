@@ -8,9 +8,74 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Item",
+"class": "Armor",
+"language": "GDScript",
+"path": "res://src/items/armor.gd"
+}, {
+"base": "Node",
+"class": "ArmorFactory",
+"language": "GDScript",
+"path": "res://src/items/armor_factory.gd"
+}, {
+"base": "Node",
+"class": "Attack",
+"language": "GDScript",
+"path": "res://src/battle/attack.gd"
+}, {
+"base": "Node",
+"class": "BasePlayer",
+"language": "GDScript",
+"path": "res://src/players/base_player.gd"
+}, {
+"base": "Node",
+"class": "Battle",
+"language": "GDScript",
+"path": "res://src/battle/battle.gd"
+}, {
+"base": "Node",
+"class": "Damage",
+"language": "GDScript",
+"path": "res://src/battle/damage.gd"
+}, {
+"base": "Node",
+"class": "Item",
+"language": "GDScript",
+"path": "res://src/items/item.gd"
+}, {
+"base": "Node",
+"class": "PlayerFactory",
+"language": "GDScript",
+"path": "res://src/players/player_factory.gd"
+}, {
+"base": "Node",
+"class": "Skill",
+"language": "GDScript",
+"path": "res://src/skills/skill.gd"
+}, {
+"base": "Item",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://src/items/weapon.gd"
+}, {
+"base": "Node",
+"class": "WeaponFactory",
+"language": "GDScript",
+"path": "res://src/items/weapon_factory.gd"
+} ]
 _global_script_class_icons={
-
+"Armor": "",
+"ArmorFactory": "",
+"Attack": "",
+"BasePlayer": "",
+"Battle": "",
+"Damage": "",
+"Item": "",
+"PlayerFactory": "",
+"Skill": "",
+"Weapon": "",
+"WeaponFactory": ""
 }
 
 [application]
@@ -26,7 +91,6 @@ Global="*res://Scripts/Global/global.gd"
 [debug]
 
 settings/stdout/print_fps=true
-gdscript/completion/autocomplete_setters_and_getters=true
 
 [display]
 

@@ -1,0 +1,74 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0000.png" type="Texture" id=1]
+[ext_resource path="res://scenes/characters/Player/Player1.gd" type="Script" id=2]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0009.png" type="Texture" id=3]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0012.png" type="Texture" id=4]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0007.png" type="Texture" id=5]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0006.png" type="Texture" id=6]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0001.png" type="Texture" id=7]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0005.png" type="Texture" id=8]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0004.png" type="Texture" id=9]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0011.png" type="Texture" id=10]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0003.png" type="Texture" id=11]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0010.png" type="Texture" id=12]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0002.png" type="Texture" id=13]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0008.png" type="Texture" id=14]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 122.267
+height = 87.4561
+
+[sub_resource type="Animation" id=2]
+resource_name = "Andando"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.08, 0.16, 0.24, 0.32, 0.4, 0.48, 0.56, 0.64, 0.72, 0.8, 0.88, 0.96 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ ExtResource( 7 ), ExtResource( 13 ), ExtResource( 1 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 14 ), ExtResource( 3 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 4 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Parado"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+
+[node name="Player1" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 3.77545, 1.88774 )
+scale = Vector2( 0.584695, 0.608292 )
+texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Andando = SubResource( 2 )
+anims/Parado = SubResource( 3 )

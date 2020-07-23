@@ -44,6 +44,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/items/item.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scenes/characters/Player/gPlayer.gd"
+}, {
 "base": "Node",
 "class": "PlayerFactory",
 "language": "GDScript",
@@ -72,6 +77,7 @@ _global_script_class_icons={
 "Battle": "",
 "Damage": "",
 "Item": "",
+"Player": "",
 "PlayerFactory": "",
 "Skill": "",
 "Weapon": "",

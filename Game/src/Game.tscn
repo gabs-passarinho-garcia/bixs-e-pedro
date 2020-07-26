@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/battle/formation.gd" type="Script" id=1]
+[ext_resource path="res://src/Party.gd" type="Script" id=3]
+[ext_resource path="res://src/Game.gd" type="Script" id=4]
+[ext_resource path="res://src/characters/SnakeBossStats.tres" type="Resource" id=5]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Position2D
+
+class_name Battler_old
+
+signal turn_given
+signal turn_finished
+
+signal do
+
+export var TARGET_OFFSET_DISTANCE: float = 120.0
+
+var target_global_position: Vector2
+
+var selected: bool = false setget set_selected
+var selectable: bool = false setget set_selectable
+
+export var stats: Resource
+export var party_member = false
+
+func _ready():
+	connect(\"do\", self, \"_on_Battler_do\")
+	set_process_input(false)
+	
+	var direction: Vector2 = Vector2(-1.0, 0.0) if party_member else Vector2(1.0, 0.0)
+	target_global_position = $TargetAnchor.global_position + direction * TARGET_OFFSET_DISTANCE
+	selectable = true
+
+
+func initialize():
+	# skin.initialize()
+	# actions.initialize(skills.get_children())
+	stats = stats.copy()
+	stats.connect(\"health_depleted\", self, \"_on_health_depleted\")
+
+func _input(event):
+	print('nhe2_' + \"2\")
+	if event is InputEventKey and event.pressed:
+		if event.scancode == KEY_A:
+			print(\"Executed action\")
+			set_process_input(false)
+			emit_signal(\"do\")
+
+func _process(delta):
+	# print(delta)
+	pass
+
+func is_type(type): return type == \"Battler\" or .is_type(type)
+
+func take_turn():
+	print(\"Took turn\")
+	set_process_input(true)
+	
+	yield(self, \"do\")
+	
+	print(\"Finished turn\")
+	emit_signal(\"turn_finished\")
+
+func _on_Battler_do():
+	print('im lost')
+
+func is_able_to_play() -> bool:
+	# Returns true if the battler can perform an action
+	return stats.health > 0
+
+
+func set_selected(value):
+	selected = value
+	# skin.blink = value
+
+
+func set_selectable(value):
+	selectable = value
+	if not selectable:
+		set_selected(false)
+"
+
+[node name="Game" type="Node"]
+script = ExtResource( 4 )
+
+[node name="Formation" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="Battler" type="Node" parent="Formation"]
+script = SubResource( 1 )
+stats = ExtResource( 5 )
+
+[node name="TargetAnchor" type="Position2D" parent="Formation/Battler"]
+
+[node name="Party" type="Node2D" parent="."]
+script = ExtResource( 3 )

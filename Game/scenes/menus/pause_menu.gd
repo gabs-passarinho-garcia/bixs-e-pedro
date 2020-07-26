@@ -17,6 +17,7 @@ func _ready():
 
 func on_continue_down():
 	self.hide()
+	$AudioStreamPlayer2D.stop()
 	get_tree().paused = false
 	pass
 

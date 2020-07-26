@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Trilha menu master.ogg-4111b3041d2ef8fc79e3a1c4c97c3730.oggstr"
+
+[deps]
+
+source_file="res://assets/Musica/Trilha menu master.ogg"
+dest_files=[ "res://.import/Trilha menu master.ogg-4111b3041d2ef8fc79e3a1c4c97c3730.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

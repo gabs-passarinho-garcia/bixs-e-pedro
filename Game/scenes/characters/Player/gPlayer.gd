@@ -42,11 +42,14 @@ func _process(delta):
 	if Input.is_action_pressed("ui_left"):
 		linear_velocity.x -= WALKSPEED
 		$Sprite.flip_h = true
+		$andando.flip_h = true
 	if Input.is_action_pressed("ui_right"):
 		linear_velocity.x += WALKSPEED
 		$Sprite.flip_h = false
+		$andando.flip_h = false
 	if Input.is_action_pressed("ui_cancel"):
 		$CanvasLayer/pause_menu.show()
+		$CanvasLayer/pause_menu/AudioStreamPlayer2D.play()
 		get_tree().paused = true
 		
 	move_and_slide(linear_velocity,floor_normal)

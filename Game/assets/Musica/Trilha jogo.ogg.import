@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Trilha jogo.ogg-fc0983f3ccfa10cb601ecea2dc94bbf5.oggstr"
+
+[deps]
+
+source_file="res://assets/Musica/Trilha jogo.ogg"
+dest_files=[ "res://.import/Trilha jogo.ogg-fc0983f3ccfa10cb601ecea2dc94bbf5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

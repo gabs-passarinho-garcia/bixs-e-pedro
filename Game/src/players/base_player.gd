@@ -12,6 +12,7 @@ var health : int
 var mana : int
 
 var strength : int
+var agility : int
 
 var equipped_weapon
 var equipped_armor

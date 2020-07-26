@@ -4,13 +4,16 @@ class_name BattleArena
 
 const BattlerNode = preload("res://src/battle/Battler.gd")
 const SnakeBossFormarion = preload("res://src/battle/formations/SnakeBossFormation.tscn")
+const WarriorCharacterNode = preload("res://src/characters/WarriorCharacter.tscn")
+
+onready var GUI = $GUI
 
 onready var battle_queue: BattleQueue = $MarginContainer/BattleQueue
 # onready var interface = $CombatInterface
 # onready var rewards = $Rewards
 
 var active: bool = false
-var party: Array = []
+#var party: Array = []
 var initial_formation: Formation
 
 # TODO: Refactor and clean up this script
@@ -24,7 +27,12 @@ signal game_over
 
 func _ready():
 	var snakeFormation = SnakeBossFormarion.instance()
-	initialize(snakeFormation, [])
+	var warrior : Battler = WarriorCharacterNode.instance()
+	warrior.stats.reset()
+	GUI.update_max_life(warrior.stats.max_health)
+	GUI.update_life(warrior.stats.max_health)
+	
+	initialize(snakeFormation, [warrior])
 	battle_start()
 
 func initialize(formation: Formation, party: Array):
@@ -47,9 +55,11 @@ func battle_start():
 
 func play_intro():
 	for battler in battle_queue.get_party():
+		print("appear party:", battler)
 		battler.appear()
 	yield(get_tree().create_timer(0.5), "timeout")
 	for battler in battle_queue.get_monsters():
+		print("appear enemy:", battler)
 		battler.appear()
 	yield(get_tree().create_timer(0.5), "timeout")
 
@@ -67,16 +77,18 @@ func ready_field(formation: Formation, party_members: Array):
 		# TODO move this into a battler factory and pass already copied info into the scene
 		var party_member = party_members[i]
 		var spawn_point = party_spawn_positions.get_child(i)
-		var battler: Battler = party_member.get_battler_copy()
+		#var battler: Battler = party_member.get_battler_copy()
+		var battler: Battler = party_member
 		battler.position = spawn_point.position
 		battler.name = party_member.name
 		battler.set_meta("party_member", party_member)
 		# stats are copied from the external party member so we may restart combat cleanly,
 		# such as allowing players to retry a fight if they get game over
 		battle_queue.add_child(battler)
-		self.party.append(battler)
+		#self.party.append(battler)
 		# safely attach the interface to the AI in case player input is needed
 		# battler.ai.set("interface", interface)
+		print("added party member")
 
 func battle_end():
 	emit_signal("battle_ends")
@@ -92,7 +104,11 @@ func battle_end():
 		emit_signal("game_over")
 
 func play_turn():
+	print("In play turn")
 	var battler: Battler = get_active_battler()
+	
+	print(battler)
+	
 	var targets: Array
 	# var action: CombatAction
 
@@ -108,13 +124,19 @@ func play_turn():
 
 	# action = yield(battler.ai.choose_action(battler, opponents), "completed")
 	# targets = yield(battler.ai.choose_target(battler, action, opponents), "completed")
-	targets = []
+	targets = ["a"]
 	battler.selected = false
 
 	if targets != []:
+		if battler.party_member:
+			print("In party_member play turn")
+			yield(battler.take_turn(GUI), "completed")
+			# yield(GUI, "selected_attack")
+			# battler.take_turn()
 		# yield(battle_queue.play_turn(action, targets), "completed")
 		pass
 	if active:
+		battle_queue.skip_turn()
 		play_turn()
 
 func get_active_battler() -> Battler:

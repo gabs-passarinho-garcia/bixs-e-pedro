@@ -231,7 +231,7 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 300, 20 )
 custom_styles/fg = SubResource( 2 )
 step = 1.0
-value = 50.0
+value = 87.0
 percent_visible = false
 
 [node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
@@ -242,6 +242,7 @@ rect_min_size = Vector2( 1060, 20 )
 texture = ExtResource( 2 )
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+visible = false
 margin_top = 83.0
 margin_right = 1060.0
 margin_bottom = 162.0
@@ -319,9 +320,10 @@ rect_min_size = Vector2( 1060, 20 )
 texture = ExtResource( 2 )
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
-margin_top = 166.0
+visible = false
+margin_top = 83.0
 margin_right = 1060.0
-margin_bottom = 245.0
+margin_bottom = 162.0
 custom_constants/margin_top = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer3"]

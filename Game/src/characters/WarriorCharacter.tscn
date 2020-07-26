@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/battle/Battler.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/characters/WarriorAnimation.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/characters/WarriorCharacterStats.tres" type="Resource" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "appear"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0.0313726, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="WarriorCharacter" instance=ExtResource( 1 )]
+stats = ExtResource( 3 )
+party_member = true
+
+[node name="Meshes" parent="." index="0"]
+modulate = Color( 0, 0, 0.0313726, 0 )
+
+[node name="AnimationPlayer" parent="Meshes" index="1"]
+anims/appear = SubResource( 1 )
+
+[node name="WarriorAnimation" parent="Meshes" index="2" instance=ExtResource( 2 )]

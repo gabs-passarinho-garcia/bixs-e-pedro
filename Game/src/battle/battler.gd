@@ -34,13 +34,6 @@ func initialize():
 	stats = stats.copy()
 	stats.connect("health_depleted", self, "_on_health_depleted")
 
-func _input(event):
-	print('nhe2_' + "2")
-	if event is InputEventKey and event.pressed:
-		if event.scancode == KEY_A:
-			print("Executed action")
-			set_process_input(false)
-			emit_signal("do")
 
 func _process(delta):
 	# print(delta)
@@ -48,12 +41,12 @@ func _process(delta):
 
 func is_type(type): return type == "Battler" or .is_type(type)
 
-func take_turn():
+func take_turn(GUI):
 	print("Took turn")
-	set_process_input(true)
 	
-	yield(self, "do")
-	
+	yield(GUI, "selected_attack")
+	#TODO DO ATTACK ANIM
+
 	print("Finished turn")
 	emit_signal("turn_finished")
 

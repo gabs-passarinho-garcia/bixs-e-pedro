@@ -1,11 +1,16 @@
 extends MarginContainer
 
+signal selected_attack
+
 onready var fire1 = get_node("VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3/FireSelection/Background")
 onready var fire2 = get_node("VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3/FireSelection2/Background")
 onready var fire3 = get_node("VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3/FireSelection3/Background")
 #onready var pAnimation : PathFollow2D = get_node("VBoxContainer/ViewportContainer/Path2D/PathFollow2D")
 #onready var pSprite : PathFollow2D = get_node("VBoxContainer/ViewportContainer/Path2D/PathFollow2D/Sprite")
 #onready var pAnimationPlay : AnimationPlayer = get_node("VBoxContainer/ViewportContainer/Path2D/PathFollow2D/AnimationPlayer2")
+
+onready var soulBar1 : ProgressBar = get_node("VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer2/ProgressBar")
+onready var soulText1 : Label = get_node("VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/Label2")
 
 var selection : int = 0
 var animationWalk : bool = false
@@ -16,23 +21,33 @@ var startedBattle : bool = false
 var startedBattleFrame : int = 0
 var passedOnce = false
 
-# func _ready():
-#	update_fire_visib()
+func _ready():
+	update_fire_visib()
 	# pAnimationPlay.connect("animation_finished", self, "_on_AnimationPlayer2_finished")
 
-#func _input(event):
-#	# if event is InputEventKey and event.pressed:
-#		if event.scancode == KEY_DOWN:
-#			selection = min(2, selection + 1)
-#		elif event.scancode == KEY_UP:
-#			selection = max(0, selection - 1)
-#		elif event.scancode == KEY_X:
-#			# Animate
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		if event.scancode == KEY_DOWN:
+			selection = min(2, selection + 1)
+		elif event.scancode == KEY_UP:
+			selection = max(0, selection - 1)
+		elif event.scancode == KEY_ENTER and selection == 0:
+			# ATTACK!
+			print("ATTACK!")
+			emit_signal("selected_attack")
 #			animationWalk = true
 #			pAnimationPlay.play("Andando")
 #			set_process_input(false)
-#
-#	# update_fire_visib()
+
+	update_fire_visib()
+
+func update_life(new_hp : int):
+	soulBar1.value = min(soulBar1.max_value, new_hp)
+	soulText1.text = str(soulBar1.value) + "/" + str(soulBar1.max_value)
+
+func update_max_life(max_hp : int):
+	soulBar1.max_value = max_hp
+	soulText1.text = str(soulBar1.value) + "/" + str(soulBar1.max_value)
 
 #func _process(delta):
 #	if animationWalk:
@@ -80,7 +95,7 @@ var passedOnce = false
 #		pSprite.set_flip_h(true)
 #		animationBackWalk = true
 #
-#func update_fire_visib():
-#	fire1.visible = selection == 0;
-#	fire2.visible = selection == 1;
-#	fire3.visible = selection == 2;
+func update_fire_visib():
+	fire1.visible = selection == 0;
+	fire2.visible = selection == 1;
+	fire3.visible = selection == 2;

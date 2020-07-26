@@ -1,209 +1,38 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0000.png" type="Texture" id=1]
 [ext_resource path="res://scenes/characters/Player/Player1.gd" type="Script" id=2]
-[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0009.png" type="Texture" id=3]
-[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0012.png" type="Texture" id=4]
-[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0007.png" type="Texture" id=5]
-[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0006.png" type="Texture" id=6]
-[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0001.png" type="Texture" id=7]
-[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0005.png" type="Texture" id=8]
-[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0004.png" type="Texture" id=9]
-[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0011.png" type="Texture" id=10]
-[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0003.png" type="Texture" id=11]
-[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0010.png" type="Texture" id=12]
-[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0002.png" type="Texture" id=13]
-[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0008.png" type="Texture" id=14]
-[ext_resource path="res://assets/Players/warrior/LutaGuerreiro/frame0000.png" type="Texture" id=15]
-[ext_resource path="res://assets/Players/warrior/LutaGuerreiro/frame0002.png" type="Texture" id=16]
-[ext_resource path="res://assets/Players/warrior/LutaGuerreiro/frame0001.png" type="Texture" id=17]
-[ext_resource path="res://assets/Players/warrior/LutaGuerreiro/frame0004.png" type="Texture" id=18]
-[ext_resource path="res://assets/Players/warrior/LutaGuerreiro/frame0003.png" type="Texture" id=19]
-[ext_resource path="res://assets/Players/warrior/LutaGuerreiro/frame0008.png" type="Texture" id=20]
-[ext_resource path="res://assets/Players/warrior/LutaGuerreiro/frame0011.png" type="Texture" id=21]
-[ext_resource path="res://assets/Players/warrior/LutaGuerreiro/frame0005.png" type="Texture" id=22]
-[ext_resource path="res://assets/Players/warrior/LutaGuerreiro/frame0010.png" type="Texture" id=23]
-[ext_resource path="res://assets/Players/warrior/LutaGuerreiro/frame0006.png" type="Texture" id=24]
-[ext_resource path="res://assets/Players/warrior/LutaGuerreiro/frame0009.png" type="Texture" id=25]
-[ext_resource path="res://assets/Players/warrior/LutaGuerreiro/frame0012.png" type="Texture" id=26]
-[ext_resource path="res://assets/Players/warrior/LutaGuerreiro/frame0007.png" type="Texture" id=27]
+[ext_resource path="res://assets/Players/warrior/idle/GuerreiroIdle1.png" type="Texture" id=15]
 [ext_resource path="res://scenes/menus/pause_menu.tscn" type="PackedScene" id=28]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 122.267
-height = 87.4561
+height = 49.826
 
 [sub_resource type="Animation" id=2]
-resource_name = "Andando"
-loop = true
+resource_name = "Parado"
+step = 0.0416667
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.08, 0.16, 0.24, 0.32, 0.4, 0.48, 0.56, 0.64, 0.72, 0.8, 0.88, 0.96 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ ExtResource( 7 ), ExtResource( 13 ), ExtResource( 1 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 14 ), ExtResource( 3 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 4 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.0416667, 0.0833333, 0.125, 0.166667, 0.208333, 0.25, 0.291667, 0.333333, 0.375, 0.416667, 0.458333, 0.5, 0.541667, 0.583333, 0.625, 0.666667, 0.708333, 0.75, 0.791667, 0.833333, 0.875, 0.916667, 0.958333 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("luta:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 0, 22, 23 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Lutando"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("luta:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.001, 0.08, 0.16, 0.24, 0.32, 0.4, 0.48, 0.56, 0.64, 0.72, 0.8, 0.88, 0.96, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ ExtResource( 15 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 20 ), ExtResource( 25 ), ExtResource( 23 ), ExtResource( 21 ), ExtResource( 26 ), ExtResource( 17 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("luta:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=4]
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("luta:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=5]
-resource_name = "poseBatalha"
-tracks/0/type = "value"
-tracks/0/path = NodePath("luta:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("luta:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 15 ) ]
-}
-
-[node name="Player1" type="KinematicBody2D"]
+[node name="Warrior" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
-[node name="luta" type="Sprite" parent="."]
-visible = false
-show_behind_parent = true
-position = Vector2( -45.4085, -47.0902 )
-scale = Vector2( 0.625801, 0.764549 )
-texture = ExtResource( 17 )
-
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 3.77545, -4.83943 )
-scale = Vector2( 0.584695, 0.62511 )
-texture = ExtResource( 1 )
+position = Vector2( -5.21103, -2.61564 )
+scale = Vector2( 0.272849, 0.318245 )
+texture = ExtResource( 15 )
+vframes = 5
+hframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -219,13 +48,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "Parado"
-anims/Andando = SubResource( 2 )
-anims/Lutando = SubResource( 3 )
-anims/Parado = SubResource( 4 )
-anims/poseBatalha = SubResource( 5 )
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="pause_menu" parent="CanvasLayer" instance=ExtResource( 28 )]
@@ -233,3 +55,7 @@ margin_left = 730.204
 margin_top = 374.627
 margin_right = 770.204
 margin_bottom = 414.627
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Parado"
+anims/Parado = SubResource( 2 )

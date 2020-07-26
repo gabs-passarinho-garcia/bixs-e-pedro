@@ -1,0 +1,970 @@
+[gd_scene load_steps=117 format=2]
+
+[ext_resource path="res://assets/HUD/Battle/botao_normal_crop.png" type="Texture" id=1]
+[ext_resource path="res://assets/HUD/Battle/linha_para_membro_vivo_crop.png" type="Texture" id=2]
+[ext_resource path="res://assets/HUD/Battle/cursor_crop.png" type="Texture" id=3]
+[ext_resource path="res://assets/HUD/Hitch-hike.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/HUD/Caverna.png" type="Texture" id=5]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0000.png" type="Texture" id=6]
+[ext_resource path="res://assets/HUD/Cobra spritesheetIdleFinal.png" type="Texture" id=7]
+[ext_resource path="res://assets/HUD/RogueIdle1.png" type="Texture" id=8]
+[ext_resource path="res://assets/HUD/MagoIdleCajado1.png" type="Texture" id=9]
+[ext_resource path="res://src/battle/HUDBattle.gd" type="Script" id=10]
+[ext_resource path="res://AnimationPlayer.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/Players/warrior/LutaGuerreiro/frame0001.png" type="Texture" id=12]
+[ext_resource path="res://assets/Classic/5/Classic_30.png" type="Texture" id=13]
+
+[sub_resource type="RectangleShape2D" id=103]
+extents = Vector2( 768, 5.11874 )
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 782, 0, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1564, 0, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 2346, 0, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 3128, 0, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 3910, 0, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 4692, 0, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 900, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 782, 900, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1564, 900, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 2346, 900, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 3128, 900, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 3910, 900, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 4692, 900, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 1800, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 782, 1800, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1564, 1800, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 2346, 1800, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 3128, 1800, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 3910, 1800, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 4692, 1800, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 2700, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 782, 2700, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1564, 2700, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 2346, 2700, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 3128, 2700, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 3910, 2700, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 4692, 2700, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 3600, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 782, 3600, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1564, 3600, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 2346, 3600, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 3128, 3600, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 3910, 3600, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 4692, 3600, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 4500, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 782, 4500, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1564, 4500, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 2346, 4500, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 3128, 4500, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 3910, 4500, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 4692, 4500, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 5400, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 782, 5400, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1564, 5400, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 2346, 5400, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 3128, 5400, 782, 900 )
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 3910, 5400, 782, 900 )
+
+[sub_resource type="SpriteFrames" id=49]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
+
+[sub_resource type="AtlasTexture" id=50]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=51]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 217, 0, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=52]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 434, 0, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=53]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 651, 0, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=54]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 868, 0, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=55]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 324, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=56]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 217, 324, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=57]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 434, 324, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=58]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 651, 324, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=59]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 868, 324, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=60]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 648, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 217, 648, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=62]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 434, 648, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=63]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 651, 648, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=64]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 868, 648, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=65]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 972, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=66]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 217, 972, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=67]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 434, 972, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=68]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 651, 972, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=69]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 868, 972, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 1296, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 217, 1296, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=72]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 434, 1296, 217, 324 )
+
+[sub_resource type="AtlasTexture" id=73]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 651, 1296, 217, 324 )
+
+[sub_resource type="SpriteFrames" id=74]
+animations = [ {
+"frames": [ SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
+
+[sub_resource type="AtlasTexture" id=75]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=76]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 208, 0, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=77]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 416, 0, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=78]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 624, 0, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=79]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 832, 0, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=80]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 363, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=81]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 208, 363, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=82]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 416, 363, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 624, 363, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=84]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 832, 363, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=85]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 726, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=86]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 208, 726, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=87]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 416, 726, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=88]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 624, 726, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=89]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 832, 726, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=90]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 1089, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=91]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 208, 1089, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=92]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 416, 1089, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=93]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 624, 1089, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=94]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 832, 1089, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=95]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 1452, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=96]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 208, 1452, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=97]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 416, 1452, 208, 363 )
+
+[sub_resource type="AtlasTexture" id=98]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 624, 1452, 208, 363 )
+
+[sub_resource type="SpriteFrames" id=99]
+animations = [ {
+"frames": [ SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
+
+[sub_resource type="Curve2D" id=100]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 160.948, 419.316, 0, 0, 0, 0, 165.158, 426.685, 0, 0, 0, 0, 172.527, 438.264, 0, 0, 0, 0, 180.948, 446.685, 0, 0, 0, 0, 217.79, 447.737, 0, 0, 0, 0, 368.316, 445.632, 0, 0, 0, 0, 564.106, 444.579, 0, 0, 0, 0, 751.474, 442.474, 0, 0, 0, 0, 804.106, 442.474, 0, 0, 0, 0, 823.053, 434.053, 0, 0, 0, 0, 836.738, 426.685, 0, 0, 0, 0, 849.369, 415.106 )
+}
+
+[sub_resource type="GradientTexture" id=101]
+
+[sub_resource type="StyleBoxFlat" id=102]
+bg_color = Color( 0.611765, 0.603922, 0.603922, 1 )
+
+[node name="GUI" type="MarginContainer"]
+anchor_right = 1.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 1366.0
+margin_bottom = 769.0
+
+[node name="ViewportContainer" type="ViewportContainer" parent="VBoxContainer"]
+margin_right = 1366.0
+margin_bottom = 512.0
+rect_min_size = Vector2( 0, 512 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/ViewportContainer"]
+margin_right = 1366.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 1366, 600 )
+texture = ExtResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="VBoxContainer/ViewportContainer/NinePatchRect"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/ViewportContainer/NinePatchRect/StaticBody2D"]
+position = Vector2( 658.708, 578.517 )
+shape = SubResource( 103 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="VBoxContainer/ViewportContainer"]
+position = Vector2( 1099.57, 286.912 )
+scale = Vector2( 0.655071, 0.655071 )
+frames = SubResource( 49 )
+frame = 42
+playing = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="VBoxContainer/ViewportContainer"]
+position = Vector2( 568.267, 425.07 )
+frames = SubResource( 74 )
+frame = 22
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="VBoxContainer/ViewportContainer"]
+position = Vector2( 379.85, 413.011 )
+frames = SubResource( 99 )
+frame = 11
+playing = true
+
+[node name="Path2D" type="Path2D" parent="VBoxContainer/ViewportContainer"]
+curve = SubResource( 100 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="VBoxContainer/ViewportContainer/Path2D"]
+position = Vector2( 160.948, 419.316 )
+rotation = 1.05283
+rotate = false
+loop = false
+
+[node name="Sprite" type="Sprite" parent="VBoxContainer/ViewportContainer/Path2D/PathFollow2D"]
+position = Vector2( 0.738525, -1.50696 )
+rotation = -1.0472
+scale = Vector2( 0.534397, 0.534397 )
+texture = ExtResource( 6 )
+
+[node name="luta" type="Sprite" parent="VBoxContainer/ViewportContainer/Path2D/PathFollow2D"]
+position = Vector2( -49.8858, 28.7945 )
+rotation = -1.0472
+scale = Vector2( 0.619836, 0.619836 )
+texture = ExtResource( 12 )
+
+[node name="Hit" type="Sprite" parent="VBoxContainer/ViewportContainer/Path2D/PathFollow2D"]
+visible = false
+position = Vector2( -111.558, -21.2977 )
+texture = ExtResource( 13 )
+offset = Vector2( 29.2045, 9.77273 )
+
+[node name="AnimationPlayer2" parent="VBoxContainer/ViewportContainer/Path2D/PathFollow2D" instance=ExtResource( 11 )]
+autoplay = ""
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 516.0
+margin_right = 1366.0
+margin_bottom = 769.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/MarginContainer"]
+margin_right = 1366.0
+margin_bottom = 253.0
+texture = SubResource( 101 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+margin_right = 1366.0
+margin_bottom = 253.0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+margin_right = 80.0
+margin_bottom = 253.0
+
+[node name="FireSelection" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+
+[node name="Background" type="NinePatchRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3/FireSelection"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 60, 70 )
+texture = ExtResource( 3 )
+
+[node name="FireSelection2" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3"]
+margin_top = 84.0
+margin_right = 80.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 80, 80 )
+
+[node name="Background" type="NinePatchRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3/FireSelection2"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 60, 70 )
+texture = ExtResource( 3 )
+
+[node name="FireSelection3" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3"]
+margin_top = 168.0
+margin_right = 80.0
+margin_bottom = 248.0
+rect_min_size = Vector2( 80, 80 )
+
+[node name="Background" type="NinePatchRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3/FireSelection3"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 60, 70 )
+texture = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 84.0
+margin_right = 284.0
+margin_bottom = 253.0
+
+[node name="AttackButton" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 85.0
+custom_constants/margin_top = 5
+
+[node name="Background" type="NinePatchRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/AttackButton"]
+margin_top = 5.0
+margin_right = 200.0
+margin_bottom = 85.0
+rect_min_size = Vector2( 100, 80 )
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/AttackButton/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.29236
+margin_bottom = -1.29236
+custom_fonts/font = ExtResource( 4 )
+text = "Atacar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MagickButton" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 89.0
+margin_right = 200.0
+margin_bottom = 169.0
+
+[node name="Background" type="NinePatchRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/MagickButton"]
+margin_right = 200.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 100, 80 )
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/MagickButton/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "Magia"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemButton" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 173.0
+margin_right = 200.0
+margin_bottom = 253.0
+
+[node name="Background" type="NinePatchRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/ItemButton"]
+margin_right = 200.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 200, 80 )
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/ItemButton/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "Item"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 288.0
+margin_right = 1348.0
+margin_bottom = 253.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 1060.0
+margin_bottom = 79.0
+custom_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
+margin_top = 10.0
+margin_right = 1060.0
+margin_bottom = 79.0
+rect_min_size = Vector2( 0, 60 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+margin_right = 1060.0
+margin_bottom = 45.0
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 45.0
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer"]
+margin_right = 100.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 100, 0 )
+custom_fonts/font = ExtResource( 4 )
+text = "Shimei"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 104.0
+margin_right = 404.0
+margin_bottom = 45.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_top = 3.0
+margin_right = 33.0
+margin_bottom = 17.0
+text = "Alma"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 37.0
+margin_right = 97.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 60, 20 )
+text = "50/100"
+align = 1
+valign = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 300.0
+margin_bottom = 44.0
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer2"]
+margin_right = 300.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 300, 20 )
+custom_styles/fg = SubResource( 102 )
+step = 1.0
+value = 50.0
+percent_visible = false
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+margin_top = 49.0
+margin_right = 1060.0
+margin_bottom = 69.0
+rect_min_size = Vector2( 1060, 20 )
+texture = ExtResource( 2 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 83.0
+margin_right = 1060.0
+margin_bottom = 162.0
+custom_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2"]
+margin_top = 10.0
+margin_right = 1060.0
+margin_bottom = 79.0
+rect_min_size = Vector2( 0, 60 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/VBoxContainer"]
+margin_right = 1060.0
+margin_bottom = 45.0
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 45.0
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer/CenterContainer"]
+margin_right = 100.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 100, 0 )
+custom_fonts/font = ExtResource( 4 )
+text = "Niven"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer"]
+margin_left = 104.0
+margin_right = 404.0
+margin_bottom = 45.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_top = 3.0
+margin_right = 33.0
+margin_bottom = 17.0
+text = "Alma"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 37.0
+margin_right = 97.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 60, 20 )
+text = "76/125"
+align = 1
+valign = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 300.0
+margin_bottom = 44.0
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer2"]
+margin_right = 300.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 300, 20 )
+custom_styles/fg = SubResource( 102 )
+max_value = 125.0
+step = 1.0
+value = 76.0
+percent_visible = false
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/VBoxContainer"]
+margin_top = 49.0
+margin_right = 1060.0
+margin_bottom = 69.0
+rect_min_size = Vector2( 1060, 20 )
+texture = ExtResource( 2 )
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 166.0
+margin_right = 1060.0
+margin_bottom = 245.0
+custom_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer3"]
+margin_top = 10.0
+margin_right = 1060.0
+margin_bottom = 79.0
+rect_min_size = Vector2( 0, 60 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer3/VBoxContainer"]
+margin_right = 1060.0
+margin_bottom = 45.0
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer3/VBoxContainer/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 45.0
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer3/VBoxContainer/HBoxContainer/CenterContainer"]
+margin_right = 100.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 100, 0 )
+custom_fonts/font = ExtResource( 4 )
+text = "Miza"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer3/VBoxContainer/HBoxContainer"]
+margin_left = 104.0
+margin_right = 404.0
+margin_bottom = 45.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer3/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer3/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_top = 3.0
+margin_right = 33.0
+margin_bottom = 17.0
+text = "Alma"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer3/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 37.0
+margin_right = 97.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 60, 20 )
+text = "12/65"
+align = 1
+valign = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer3/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 300.0
+margin_bottom = 44.0
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer3/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer2"]
+margin_right = 300.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 300, 20 )
+custom_styles/fg = SubResource( 102 )
+max_value = 65.0
+step = 1.0
+value = 12.0
+percent_visible = false
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer3/VBoxContainer"]
+margin_top = 49.0
+margin_right = 1060.0
+margin_bottom = 69.0
+rect_min_size = Vector2( 1060, 20 )
+texture = ExtResource( 2 )

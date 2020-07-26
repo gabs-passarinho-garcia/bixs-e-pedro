@@ -50,4 +50,5 @@ func order_queue():
 		print("Queue must be closed to sort")
 
 func pop_from_queue() -> Battler:
-	return queue.pop_front()[1]
+	if len(queue) > 0:
+		return queue.pop_front()[1]

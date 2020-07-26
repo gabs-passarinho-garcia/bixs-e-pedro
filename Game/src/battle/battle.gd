@@ -2,7 +2,9 @@ extends Node
 
 class_name Battle
 
-const BasePlayerNode = preload("res://src/players/player.tscn")
+signal turn_given
+
+const BasePlayerNode = preload("res://src/characters/player.tscn")
 
 onready var queue = preload("res://src/battle/queue.tscn")
 
@@ -13,6 +15,7 @@ var node_queue : BattleQueue
 var rng = RandomNumberGenerator.new()
 
 func _input(event):
+	print('nhe1')
 	if event is InputEventKey and event.pressed:
 		if event.scancode == KEY_A:
 			self.add_child(queue.instance())
@@ -25,6 +28,7 @@ func _input(event):
 			
 		elif event.scancode == KEY_P:
 			var player = BattlerFactory.make_battler("Player_" + str(len(players)))
+			add_child(player)
 			players.append(player)
 			node_queue.add_to_queue([rng.randi_range(0, 10), player])
 			
@@ -32,6 +36,7 @@ func _input(event):
 		elif event.scancode == KEY_E:
 			var enemy = BattlerFactory.make_battler("Enemy_" + str(len(enemies)))
 			enemies.append(enemy)
+			add_child(enemy)
 			node_queue.add_to_queue([rng.randi_range(0, 10), enemy])
 			
 			print("Enemies:", enemies)
@@ -49,13 +54,24 @@ func _input(event):
 			print("Queue:", node_queue.print_queue())
 			
 		elif event.scancode == KEY_X:
-			while not node_queue.empty():
-				var battler : Battler = node_queue.pop_from_queue()
-				print("Battler:", battler)
+			var battler : Battler = node_queue.pop_from_queue()
+			print("Battler:", battler)
+			
+			#battler.connect("turn_given", battler, "take_turn")
+			#emit_signal("turn_given", battler)
+			set_process_input(false)
+			battler.take_turn()
+			
+			print("Connected and emited!")
+			
+			yield(battler, "turn_finished")
+			
+			print("NEXT!")
 			#if len(players) > 0:
 			#	for enemy in enemies:
 			#		enemy.receive_attack(players[0].base_attack())
 			#print("Enemies after attack:", enemies)
+	set_process_input(true)
 
 func died_player(player : BasePlayer):
 	print(player, " is dead.")

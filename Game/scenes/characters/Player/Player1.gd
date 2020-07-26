@@ -8,6 +8,7 @@ extends Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	player_class = "warrior"
 	._ready()
 	pass # Replace with function body.
 

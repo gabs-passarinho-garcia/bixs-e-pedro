@@ -12,24 +12,20 @@ var linear_velocity = Vector2(0,0)
 
 
 var player_name = ""
-var health = 0
-var mana = 0
-var strength = 0
+var soul = 0
 var equipped_weapon = ""
 var equipped_armor = ""
 var known_skills = []
+var player_class
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("Player")
 	player_name = Global.player_name
-	health = Global.health
-	mana = Global.mana
-	strength = Global.strength
+	soul = Global.soul
 	equipped_weapon = Global.equipped_weapon
 	equipped_armor = Global.equipped_armor
-	known_skills = Global.known_skills
 	known_skills = Global.known_skills
 	set_process(true)
 

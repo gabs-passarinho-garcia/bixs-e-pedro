@@ -5,14 +5,12 @@ extends Node
 # var a = 2
 # var b = "text"
 var player_name = "Dummy"
-var health = 10
-var mana = 5
-var strength = 1
+var soul = 10
 var equipped_weapon = "Weapon"
-var equipped_armor = "cloth"
+var equipped_armor = "clothe"
 var known_skills = []
-var player_class
-var cena_atual
+var player_class = ""
+var cena_atual = "res://scenes/Levels/Teste.tscn"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,9 +19,8 @@ func _ready():
 
 func save_game(): #user://savegame.save
 	var save_dict = {
-		"health" : health,
-		"mana" : mana,
-		"strength" : strength,
+		"name" : player_name,
+		"soul" : soul,
 		"equipped_weapon": equipped_weapon,
 		"equipped_armor" : equipped_armor,
 		"known_skills" : known_skills ,
@@ -52,13 +49,12 @@ func game_load():
 	var result = JSON.parse(content)
 	var dict = result.result
 	if (dict):
-		health = dict.health
-		mana = dict.mana
-		strength = dict.strength
+		player_name = dict.name
+		soul = dict.soul
 		equipped_weapon = dict.equipped_weapon
 		equipped_armor = dict.equipped_armor
 		cena_atual = dict.cena_atual
-		player_class = dict.player_class
+		player_class = dict.playerClass
 		get_tree().change_scene(cena_atual)
 	else:
 		print("Error: wrong JSON format, Screwed up loser")

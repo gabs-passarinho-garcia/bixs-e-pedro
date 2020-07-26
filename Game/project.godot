@@ -112,7 +112,7 @@ _global_script_class_icons={
 
 config/name="Realm of Whispers"
 run/main_scene="res://scenes/menus/main_menu.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/Telas/Icone.png"
 
 [autoload]
 

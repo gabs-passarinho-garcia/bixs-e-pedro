@@ -1,15 +1,81 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=19 format=2]
 
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0000.png" type="Texture" id=1]
 [ext_resource path="res://scenes/characters/Player/Player1.gd" type="Script" id=2]
-[ext_resource path="res://assets/Players/warrior/idle/GuerreiroIdle1.png" type="Texture" id=15]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0009.png" type="Texture" id=3]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0012.png" type="Texture" id=4]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0007.png" type="Texture" id=5]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0006.png" type="Texture" id=6]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0001.png" type="Texture" id=7]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0005.png" type="Texture" id=8]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0004.png" type="Texture" id=9]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0011.png" type="Texture" id=10]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0003.png" type="Texture" id=11]
+[ext_resource path="res://assets/Players/warrior/idle/GuerreiroIdle1.png" type="Texture" id=12]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0002.png" type="Texture" id=13]
+[ext_resource path="res://assets/Players/warrior/walking/CorridaGuerreiro/frame0008.png" type="Texture" id=14]
 [ext_resource path="res://scenes/menus/pause_menu.tscn" type="PackedScene" id=28]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 122.267
 height = 49.826
 
+[sub_resource type="Animation" id=3]
+resource_name = "Andando"
+loop = true
+step = 0.0769231
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.001, 0.0769231, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.923077 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ ExtResource( 1 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 14 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.53, 0.535 ) ]
+}
+
 [sub_resource type="Animation" id=2]
 resource_name = "Parado"
+loop = true
 step = 0.0416667
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -23,16 +89,62 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 0, 22, 23 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 12 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.289433, 0.324745 ) ]
+}
 
 [node name="Warrior" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -5.21103, -2.61564 )
-scale = Vector2( 0.272849, 0.318245 )
-texture = ExtResource( 15 )
-vframes = 5
-hframes = 5
+position = Vector2( -1.65142, -7.35568 )
+scale = Vector2( 0.53, 0.535 )
+texture = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -58,4 +170,5 @@ margin_bottom = 414.627
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Parado"
+anims/Andando = SubResource( 3 )
 anims/Parado = SubResource( 2 )

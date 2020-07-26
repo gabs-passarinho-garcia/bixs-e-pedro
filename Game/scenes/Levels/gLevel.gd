@@ -1,7 +1,8 @@
 extends Node2D
 class_name gLevel
 
-onready var player = $Player1
+var guerreiro = preload("res://scenes/characters/Player/Player2.tscn")
+var player
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -9,6 +10,9 @@ onready var player = $Player1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	player = guerreiro.instance()
+	$Position2D.add_child(player)
+	
 	pass # Replace with function body.
 
 func change_scene(next_scene):

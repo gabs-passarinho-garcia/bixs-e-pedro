@@ -9,7 +9,7 @@ var soul = 10
 var equipped_weapon = "Weapon"
 var equipped_armor = "clothe"
 var known_skills = []
-var player_class = ""
+var player_class := "res://scenes/characters/Player/Player2.tscn"
 var cena_atual = "res://scenes/Levels/Teste.tscn"
 
 

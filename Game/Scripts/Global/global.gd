@@ -19,8 +19,7 @@ var cena_atual
 func _ready():
 	pass # Replace with function body.
 
-func save_game(cena): #user://savegame.save
-	var cena_atual = cena
+func save_game(): #user://savegame.save
 	var save_dict = {
 		"health" : health,
 		"mana" : mana,
@@ -32,10 +31,10 @@ func save_game(cena): #user://savegame.save
 		"playerClass" : player_class
 		}
 	var save_game = File.new() #user://savegame.save
-	if not save_game.file_exists("user://savegame.save"):
-		save_game.open("user://savegame.save", File.WRITE)
+	if not save_game.file_exists("res://scenes/menus/savegame.save"):
+		save_game.open("res://scenes/menus/savegame.save", File.WRITE)
 	else:
-		save_game.open("user://savegame.save", File.READ_WRITE)
+		save_game.open("res://scenes/menus/savegame.save", File.READ_WRITE)
 	save_game.store_line(to_json(save_dict))
 	save_game.close()
 	return
@@ -44,8 +43,8 @@ func save_game(cena): #user://savegame.save
 func game_load():
 	var content = ""
 	var file = File.new()
-	if file.file_exists("user://savegame.save"):
-		file.open("user://savegame.save", file.READ)
+	if file.file_exists("res://scenes/menus/savegame.save"):
+		file.open("res://scenes/menus/savegame.save", file.READ)
 		content = file.get_as_text()
 		file.close()
 	else:

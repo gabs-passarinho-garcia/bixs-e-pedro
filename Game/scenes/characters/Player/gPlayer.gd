@@ -50,7 +50,9 @@ func _process(delta):
 		linear_velocity.x += WALKSPEED
 		$Sprite.flip_h = false
 	if Input.is_action_pressed("ui_cancel"):
-		get_tree().quit()
+		$CanvasLayer/pause_menu.show()
+		get_tree().paused = true
+		
 	move_and_slide(linear_velocity,floor_normal)
 	if linear_velocity.x == 0:
 		$AnimationPlayer.play("Parado")

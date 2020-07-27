@@ -1,1 +1,1 @@
-{"cena_atual":"res://scenes/Levels/Teste.tscn","equipped_armor":"clothe","equipped_weapon":"Weapon","known_skills":[],"name":"Dummy","playerClass":"","soul":10}
+{"cena_atual":"res://scenes/Levels/Teste.tscn","equipped_armor":"clothe","equipped_weapon":"Weapon","known_skills":[],"name":"Dummy","playerClass":"res://scenes/characters/Player/Player1.tscn","soul":10}

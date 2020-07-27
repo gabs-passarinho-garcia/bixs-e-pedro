@@ -13,7 +13,7 @@ func _ready():
 	
 
 func on_play_down():
-	lixo = get_tree().change_scene("res://scenes/Levels/Teste.tscn")
+	lixo = get_tree().change_scene("res://scenes/selection/selection.tscn")
 	pass
 
 func on_quit_down():

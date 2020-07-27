@@ -12,7 +12,12 @@ var player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player = rogue.instance()
+	if Global.player_class == "res://scenes/characters/Player/Player1.tscn":
+		player = guerreiro.instance()
+	elif Global.player_class == "res://scenes/characters/Player/Player2.tscn":
+		player = mago.instance()
+	elif Global.player_class == "res://scenes/characters/Player/Player3.tscn":
+		player = rogue.instance()
 	$Position2D.add_child(player)
 	
 	pass # Replace with function body.
